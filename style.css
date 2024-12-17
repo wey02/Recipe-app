@@ -1,0 +1,254 @@
+:root{
+    --col-primary-300: hsl(172, 67%, 45%);
+    --col-primary-350: hsl(172, 67%, 65%);
+
+    --col-primary-400:  hsl(183, 100%, 15%);
+    --col-neutral-200: hsl(186, 14%, 43%);
+    --col-neutral-100: hsl(184, 14%, 56%);
+    --col-neutral-30:  hsl(185, 41%, 84%);
+    --col-neutral-20: hsl(189, 41%, 97%);
+    --col-neutral-10: hsl(0, 0%, 100%);
+    
+    --font-size: 24px;
+    --font-family: 'Space Mono', monospace;
+
+    --font-weight:700;
+}
+
+body
+{
+    background-color: var(--col-neutral-30);
+    margin: 0;
+}
+header{
+    margin: 2rem;
+    text-align: center;
+}
+
+main{
+    background-color: var(--col-neutral-10);
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
+}
+
+.wrapper{
+    padding: 1rem 1.5rem;
+    font-family: var(--font-family);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.wrapper h1,h2, .message{
+    font-size: 15px;
+    color: var(--col-neutral-200);
+}
+
+.billPrice, .countPeople__num{
+    position: relative;
+}
+
+.billPrice input[type='text'], .countPeople__num input[type='text']{
+    width: 100%;
+    text-align: right;
+    font-family: var(--font-family);
+    color: var(--col-primary-400);
+    font-size: 18px;
+    font-weight: 700;
+    border: none;
+    padding: 0;
+}
+
+.billPrice img, .countPeople__num img{
+    position: absolute;
+    left: 10px;
+    top: 7px;
+    height: 15px;
+}
+
+.bill{
+    color: var(--col-primary-400); 
+    font-weight: 700;
+    font-size: 23px;
+}
+.countPeople__num img{
+    position: absolute;
+    left: 10px;
+    top: 60px;
+    height: 15px;
+}
+
+.countPeople{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.countPeople__num.error input{
+    border: 2px solid rgb(240, 121, 121);
+    border-radius: 5px;
+}
+
+.message{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.messageError{
+    visibility: hidden;
+}
+
+.countPeople__num.error .messageError{
+    visibility: visible;
+    font-weight: 700;
+    color:rgb(240, 121, 121);
+
+}
+
+
+
+.selectionTip__buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    gap: 1rem;
+
+}
+
+.selectionTip__buttons button{
+    padding: .5rem;
+    background-color: var(--col-primary-400);
+    color: var(--col-neutral-10);
+    font-family: var(--font-family);
+    font-size: 15px;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.selectionTip__buttons button:hover{
+    background-color: var(--col-primary-300);
+    color: var(--col-primary-400);
+}
+
+.selectionTip__buttons button:focus{
+    background-color: var(--col-primary-300);
+    color: var(--col-primary-400);
+}
+
+
+
+.selectionTip__buttons input[type='text']{
+    min-width: 96%;
+    text-align: right;
+    color: var(--col-primary-400);
+    border: none;
+    font-size: 18px;
+    font-weight: 700;
+    outline: none;
+    transition: 0.5s;
+}
+
+::placeholder{
+    font-family: var(--font-family);
+    color: var(--col-neutral-200);
+    font-size: 18px;
+    font-weight: 700;
+
+}
+
+input:not([type="button"]):not([type="submit"]):not([type="reset"]):focus, input:not([type="button"]):not([type="submit"]):not([type="reset"]):focus, textarea:hover, textarea:focus, select:hover, select:focus 
+{    
+    border:1px solid hsl(172, 67%, 45%);    
+    outline:none;
+}
+
+.totalSection{
+    background-color: var(--col-primary-400);
+    padding: 1rem;
+    border: none;
+    border-radius: 10px;
+
+}
+
+.totalSection h3{
+    color: var(--col-neutral-20);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.totalSection span{
+    color: var(--col-neutral-100);
+}
+
+.tipAmount, .totalAmount{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+}
+
+.totalSection p{
+    color: var(--col-primary-300);
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.totalSection button{
+    width: 100%;
+    background-color: var(--col-primary-300);
+    border: none;
+    color: var(--col-primary-400);
+    text-transform: uppercase;
+    padding: .6rem;
+    font-family: var(--font-family);
+    font-weight: 800;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.totalSection button:hover{
+    background-color: var(--col-primary-350);
+}
+.totalSection button::before{
+    background-color: var(--col-primary-400);
+}
+
+@media (min-width:800px){
+    body{
+        margin: 0 10rem;
+    }
+    main{
+        border-radius: 10px;
+    }
+    .wrapper{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+
+    .selectionTip__buttons{
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .totalSection{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 2rem;
+    }
+    .tipAmount, .totalAmount{
+        gap: 1rem;
+    }
+    h3{
+        font-size: 13px;
+    }
+    .tipAmount p, .totalAmount p{
+        font-size: 35px;
+        
+    }
+}
